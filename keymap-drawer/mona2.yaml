@@ -180,7 +180,7 @@ layers:
   - Ctl+V
   - ^
   - '&'
-  - '&mkp MB3'
+  - SCRL_W
   - (
   - )
   - TAB
@@ -223,7 +223,7 @@ layers:
   - Gui+V
   - ^
   - '&'
-  - '&mkp MB3'
+  - SCRL_M
   - (
   - )
   - TAB
