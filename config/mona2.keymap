@@ -94,19 +94,36 @@
             label = "SCREENSHOT";
         };
 
-        henkan: henkan {
+        Win_henkan: henkan {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&kp GRAVE>,
-                <&macro_release>,
-                <&kp LEFT_ALT>;
+            bindings = <&macro_press>, <&kp INT_HENKAN &to 0>;
 
             label = "HENKAN";
+        };
+
+        Win_muhenkan: Win_muhenkan {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp INT_MUHENKAN &to 0>;
+
+            label = "WIN_MUHENKAN";
+        };
+
+        Mac_henkan: Mac_henkan {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp INT_HENKAN &to 1>;
+
+            label = "MAC_HENKAN";
+        };
+
+        Mac_muhenkan: Mac_muhenkan {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp INT_MUHENKAN &to 1>;
+
+            label = "MAC_MUHENKAN";
         };
     };
 
@@ -174,6 +191,20 @@
             #binding-cells = <0>;
             bindings = <&zfold LEFT_SHIFT Z>, <&kp LS(Z)>;
         };
+
+        behavior_Win_henkan: behavior_Win_henkan {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BEHAVIOR_WIN_HENKAN";
+            #binding-cells = <0>;
+            bindings = <&Win_henkan>, <&Win_muhenkan>;
+        };
+
+        behavior_Mac_henkan: behavior_Mac_henkan {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BEHAVIOR_MAC_HENKAN";
+            #binding-cells = <0>;
+            bindings = <&Mac_henkan>, <&Mac_muhenkan>;
+        };
     };
 
     keymap {
@@ -182,10 +213,10 @@
         win_layer {
             display-name = "WIN";
             bindings = <
-&kp Q             &kp W         &kp E         &kp R            &kp T                                      &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F            &kp G                       &kp COLON      &kp H        &kp J  &kp K      &kp L    &lt 4 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V            &kp B        &kp COLON      &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &lt 10 SLASH
-&kp RCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 BACKSPACE  &lt 4 SPACE  &lt 6 MINUS    &kp ENTER      &lt 6 ENTER                             &to 2
+&kp Q             &kp W         &kp E         &kp R            &kp T                                             &kp Y        &kp U  &lt 6 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F            &kp G                       &kp COLON             &kp H        &kp J  &kp K      &kp L    &lt 4 MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V            &kp B        &kp COLON      &kp SEMICOLON         &kp N        &kp M  &kp COMMA  &kp DOT  &lt 10 SLASH
+&kp RCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 BACKSPACE  &lt 4 SPACE  &lt 6 MINUS    &behavior_Win_henkan  &lt 6 ENTER                             &to 2
             >;
 
             sensor-bindings = <&rsr_default>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -194,10 +225,10 @@
         mac_layer {
             display-name = "MAC";
             bindings = <
-&kp Q             &kp W         &kp E         &kp R            &kp T                                      &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F            &kp G                       &kp MINUS      &kp H        &kp J  &kp K      &kp L    &lt 4 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V            &kp B        &kp COLON      &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &lt 11 SLASH
-&kp LEFT_GUI      &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 BACKSPACE  &lt 5 SPACE  &lt 7 MINUS    &kp ENTER      &lt 7 ENTER                             &kp RIGHT_SHIFT
+&kp Q             &kp W         &kp E         &kp R            &kp T                                             &kp Y        &kp U  &to 7      &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F            &kp G                       &kp MINUS             &kp H        &kp J  &kp K      &kp L    &lt 4 MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V            &kp B        &kp COLON      &kp SEMICOLON         &kp N        &kp M  &kp COMMA  &kp DOT  &lt 11 SLASH
+&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 BACKSPACE  &lt 5 SPACE  &lt 7 MINUS    &behavior_Mac_henkan  &lt 7 ENTER                             &to 3
             >;
 
             sensor-bindings = <&rsr_default>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -231,7 +262,7 @@
             display-name = "MOUSE_W";
             bindings = <
 &kp ESCAPE                  &kp LC(Z)       &kp UP_ARROW    &kp LC(Y)        &kp LC(V)                                  &kp CARET         &kp AMPERSAND      &mkp MB3        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp TAB                     &kp LEFT_ARROW  &screenshot     &kp RIGHT_ARROW  &kp ASTERISK               &kp UNDERSCORE  &kp EXCLAMATION   &mkp MB1           &mo 6           &mkp MB2              &henkan
+&kp TAB                     &kp LEFT_ARROW  &screenshot     &kp RIGHT_ARROW  &kp ASTERISK               &kp UNDERSCORE  &kp EXCLAMATION   &mkp MB1           &mo 6           &mkp MB2              &Win_henkan
 &mt LEFT_SHIFT KP_NUMBER_0  &kp LC(Y)       &kp DOWN_ARROW  &kp END          &kp HOME      &kp EQUAL    &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp LC(SPACE)
 &kp LCTRL                   &trans          &trans          &trans           &trans        &trans       &kp ENTER       &kp BACKSPACE                                                              &kp PIPE
             >;
@@ -254,10 +285,10 @@
         scroll_win {
             display-name = "SCRL_W";
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                           &trans  &trans    &mkp MB3  &trans    &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END            &out OUT_TOG  &trans  &mkp MB1  &trans    &mkp MB2  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans        &trans  &mkp MB1  &trans    &mkp MB2  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans    &trans        &trans                                &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                           &trans  &trans          &kp UP_ARROW    &trans           &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END            &out OUT_TOG  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans        &trans  &mkp MB1        &trans          &mkp MB2         &trans
+&trans          &trans                  &trans          &trans                   &trans   &trans    &trans        &trans                                                   &trans
             >;
 
             sensor-bindings = <&rsr_default>;
@@ -266,10 +297,10 @@
         scroll_mac {
             display-name = "SCRL_M";
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                           &trans  &trans    &mkp MB3  &trans    &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END            &out OUT_TOG  &trans  &mkp MB1  &trans    &mkp MB2  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans        &trans  &trans    &trans    &trans    &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans    &trans        &trans                                &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                           &trans  &trans          &kp UP_ARROW    &trans           &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END            &out OUT_TOG  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans        &trans  &trans          &trans          &trans           &trans
+&trans          &trans                  &trans          &trans                   &trans   &trans    &trans        &trans                                                   &trans
             >;
 
             sensor-bindings = <&rsr_default>;
