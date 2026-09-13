@@ -8,7 +8,7 @@ layers:
   - T
   - Y
   - U
-  - I
+  - {t: I, h: SCRL_W}
   - O
   - P
   - A
@@ -40,7 +40,7 @@ layers:
   - {t: BACKSPACE, h: NUM_W}
   - {t: SPACE, h: MOUSE_W}
   - {t: '-', h: SCRL_W}
-  - ENTER
+  - '&behavior_Win_henkan'
   - {t: ENTER, h: SCRL_W}
   - {t: NUM_W, h: toggle}
   MAC:
@@ -51,7 +51,7 @@ layers:
   - T
   - Y
   - U
-  - I
+  - {t: SCRL_M, h: toggle}
   - O
   - P
   - A
@@ -77,15 +77,15 @@ layers:
   - ','
   - .
   - {t: /, h: BLE_M}
-  - LEFT GUI
+  - LEFT CONTROL
   - LEFT WIN
   - LEFT ALT
   - {t: BACKSPACE, h: NUM_M}
   - {t: SPACE, h: MOUSE_M}
   - {t: '-', h: SCRL_M}
-  - ENTER
+  - '&behavior_Mac_henkan'
   - {t: ENTER, h: SCRL_M}
-  - RIGHT SHIFT
+  - {t: NUM_M, h: toggle}
   NUM_W:
   - ESCAPE
   - '!'
@@ -193,7 +193,7 @@ layers:
   - '&mkp MB1'
   - SCRL_W
   - '&mkp MB2'
-  - {t: '&henkan', type: held}
+  - {t: '&Win_henkan', type: held}
   - {t: KP 0, h: LEFT SHIFT}
   - Ctl+Y
   - DOWN ARROW
@@ -266,7 +266,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB3'
+  - {t: UP ARROW, type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - HOME
@@ -276,9 +276,9 @@ layers:
   - END
   - OUT TOG
   - {t: ▽, type: trans}
-  - '&mkp MB1'
-  - {t: ▽, type: trans}
-  - '&mkp MB2'
+  - LEFT ARROW
+  - DOWN ARROW
+  - RIGHT ARROW
   - {t: ▽, type: trans}
   - LEFT SHIFT
   - Gui+Sft+LEFT ARROW
@@ -297,7 +297,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -309,7 +309,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB3'
+  - UP ARROW
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - HOME
@@ -319,9 +319,9 @@ layers:
   - END
   - OUT TOG
   - {t: ▽, type: trans}
-  - '&mkp MB1'
-  - {t: ▽, type: trans}
-  - '&mkp MB2'
+  - LEFT ARROW
+  - DOWN ARROW
+  - RIGHT ARROW
   - {t: ▽, type: trans}
   - LEFT SHIFT
   - Gui+Sft+LEFT ARROW
