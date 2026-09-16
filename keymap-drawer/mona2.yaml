@@ -30,7 +30,7 @@ layers:
   - ':'
   - ;
   - N
-  - M
+  - {t: M, h: BLE_W}
   - ','
   - .
   - {t: /, h: BLE_W}
@@ -51,7 +51,7 @@ layers:
   - T
   - Y
   - U
-  - {t: SCRL_M, h: toggle}
+  - {t: I, h: SCRL_M}
   - O
   - P
   - A
@@ -73,7 +73,7 @@ layers:
   - ':'
   - ;
   - N
-  - M
+  - {t: I, h: BLE_M}
   - ','
   - .
   - {t: /, h: BLE_M}
@@ -96,18 +96,18 @@ layers:
   - '7'
   - '8'
   - '9'
-  - '*'
+  - '-'
   - TAB
   - '%'
   - ^
   - '&'
   - '*'
   - '%'
-  - '0'
+  - /
   - '4'
   - '5'
   - '6'
-  - '-'
+  - BACKSPACE
   - '|'
   - (
   - )
@@ -115,19 +115,19 @@ layers:
   - ']'
   - {t: ▽, type: trans}
   - +
-  - .
+  - '0'
   - '1'
   - '2'
   - '3'
-  - /
+  - .
   - LCTRL
   - LEFT GUI
   - LEFT ALT
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&behavior_Win_henkan'
   - ENTER
-  - BACKSPACE
   - RIGHT SHIFT
   NUM_M:
   - ESCAPE
@@ -139,18 +139,18 @@ layers:
   - '7'
   - '8'
   - '9'
-  - '*'
+  - '-'
   - TAB
   - '%'
   - ^
   - '&'
   - '*'
   - '%'
-  - '0'
+  - /
   - '4'
   - '5'
   - '6'
-  - '-'
+  - BACKSPACE
   - '|'
   - (
   - )
@@ -158,19 +158,19 @@ layers:
   - ']'
   - {t: ▽, type: trans}
   - +
-  - .
+  - '0'
   - '1'
   - '2'
   - '3'
-  - /
+  - .
   - LEFT GUI
   - LEFT GUI
   - LEFT ALT
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&behavior_Mac_henkan'
   - ENTER
-  - BACKSPACE
   - RIGHT SHIFT
   MOUSE_W:
   - ESCAPE
@@ -309,7 +309,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - UP ARROW
+  - {t: UP ARROW, type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - HOME
@@ -340,7 +340,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -460,10 +460,10 @@ layers:
   - {t: ▽, type: trans}
   - '&bootloader'
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: BT CLR, type: held}
+  - BT CLR
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -503,10 +503,10 @@ layers:
   - {t: ▽, type: trans}
   - '&bootloader'
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: BT CLR, type: held}
+  - BT CLR
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
