@@ -213,10 +213,10 @@
         win_layer {
             display-name = "WIN";
             bindings = <
-&kp Q             &kp W         &kp E         &kp R            &kp T                                             &kp Y        &kp U  &lt 6 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F            &kp G                       &kp COLON             &kp H        &kp J  &kp K      &kp L    &lt 4 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V            &kp B        &kp COLON      &kp SEMICOLON         &kp N        &kp M  &kp COMMA  &kp DOT  &lt 10 SLASH
-&kp RCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 BACKSPACE  &lt 4 SPACE  &lt 6 MINUS    &behavior_Win_henkan  &lt 6 ENTER                             &to 2
+&kp Q             &kp W         &kp E         &kp R            &kp T                                             &kp Y        &kp U     &lt 6 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F            &kp G                       &kp COLON             &kp H        &kp J     &kp K      &kp L    &lt 4 MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V            &kp B        &kp COLON      &kp SEMICOLON         &kp N        &lt 10 M  &kp COMMA  &kp DOT  &lt 10 SLASH
+&kp RCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 BACKSPACE  &lt 4 SPACE  &lt 6 MINUS    &behavior_Win_henkan  &lt 6 ENTER                                &to 2
             >;
 
             sensor-bindings = <&rsr_default>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -225,10 +225,10 @@
         mac_layer {
             display-name = "MAC";
             bindings = <
-&kp Q             &kp W         &kp E         &kp R            &kp T                                             &kp Y        &kp U  &to 7      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F            &kp G                       &kp MINUS             &kp H        &kp J  &kp K      &kp L    &lt 4 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V            &kp B        &kp COLON      &kp SEMICOLON         &kp N        &kp M  &kp COMMA  &kp DOT  &lt 11 SLASH
-&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 BACKSPACE  &lt 5 SPACE  &lt 7 MINUS    &behavior_Mac_henkan  &lt 7 ENTER                             &to 3
+&kp Q             &kp W         &kp E         &kp R            &kp T                                             &kp Y        &kp U     &lt 7 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F            &kp G                       &kp MINUS             &kp H        &kp J     &kp K      &kp L    &lt 4 MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V            &kp B        &kp COLON      &kp SEMICOLON         &kp N        &lt 11 I  &kp COMMA  &kp DOT  &lt 11 SLASH
+&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 BACKSPACE  &lt 5 SPACE  &lt 7 MINUS    &behavior_Mac_henkan  &lt 7 ENTER                                &to 3
             >;
 
             sensor-bindings = <&rsr_default>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -237,10 +237,10 @@
         num_win {
             display-name = "NUM_W";
             bindings = <
-&kp ESCAPE  &kp EXCLAMATION       &kp AT_SIGN            &kp HASH          &kp DOLLAR                                &kp EQUAL      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK
-&kp TAB     &kp PERCENT           &kp CARET              &kp AMPERSAND     &kp ASTERISK                 &kp PERCENT  &kp NUMBER_0   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS
-&kp PIPE    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans    &kp PLUS     &kp DOT        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
-&kp LCTRL   &kp LEFT_GUI          &kp LEFT_ALT           &trans            &trans             &trans    &kp ENTER    &kp BACKSPACE                                            &kp RIGHT_SHIFT
+&kp ESCAPE  &kp EXCLAMATION       &kp AT_SIGN            &kp HASH          &kp DOLLAR                                         &kp EQUAL  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
+&kp TAB     &kp PERCENT           &kp CARET              &kp AMPERSAND     &kp ASTERISK                 &kp PERCENT           &kp SLASH  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp BACKSPACE
+&kp PIPE    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans    &kp PLUS              &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOT
+&kp LCTRL   &kp LEFT_GUI          &kp LEFT_ALT           &trans            &trans             &trans    &behavior_Win_henkan  &kp ENTER                                            &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&rsr_default>;
@@ -249,10 +249,10 @@
         num_mac {
             display-name = "NUM_M";
             bindings = <
-&kp ESCAPE    &kp EXCLAMATION       &kp AT_SIGN            &kp HASH          &kp DOLLAR                                &kp EQUAL      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK
-&kp TAB       &kp PERCENT           &kp CARET              &kp AMPERSAND     &kp ASTERISK                 &kp PERCENT  &kp NUMBER_0   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS
-&kp PIPE      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans    &kp PLUS     &kp DOT        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
-&kp LEFT_GUI  &kp LEFT_GUI          &kp LEFT_ALT           &trans            &trans             &trans    &kp ENTER    &kp BACKSPACE                                            &kp RIGHT_SHIFT
+&kp ESCAPE    &kp EXCLAMATION       &kp AT_SIGN            &kp HASH          &kp DOLLAR                                         &kp EQUAL  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
+&kp TAB       &kp PERCENT           &kp CARET              &kp AMPERSAND     &kp ASTERISK                 &kp PERCENT           &kp SLASH  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp BACKSPACE
+&kp PIPE      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans    &kp PLUS              &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD
+&kp LEFT_GUI  &kp LEFT_GUI          &kp LEFT_ALT           &trans            &trans             &trans    &behavior_Mac_henkan  &kp ENTER                                            &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&rsr_default>;
